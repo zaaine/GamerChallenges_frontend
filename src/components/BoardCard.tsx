@@ -25,6 +25,7 @@ export const BoardCard = ({
         sx={{ width: { xs: 50, md: 100 } }}
         image={img}
         alt="image card"
+        loading="lazy"
       />
       <Box
         sx={{
@@ -77,6 +78,7 @@ export const BoardCard = ({
                 src={like_icon}
                 alt="like icon"
                 style={{ width: "100%", height: "auto" }}
+                loading="lazy"
               />
             </Box>
           </Box>

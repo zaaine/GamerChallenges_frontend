@@ -31,7 +31,12 @@ export const VerticalCard = ({
       }}
     >
       <CardActionArea>
-        <CardMedia component="img" src={image} alt="Card Image" />
+        <CardMedia
+          component="img"
+          src={image}
+          alt="Card Image"
+          loading="lazy"
+        />
         <CardContent
           sx={{
             backgroundColor: "var(--jet)",

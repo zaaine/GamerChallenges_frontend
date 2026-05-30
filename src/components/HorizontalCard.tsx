@@ -46,11 +46,13 @@ export const HorizontalCard = ({
         component="img"
         image={img}
         alt="image challenge card"
+        loading="lazy"
         sx={{
           width: { xs: 100, md: 200 },
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
+          objectFit: "cover",
         }}
       ></CardMedia>
       <CardContent
@@ -65,7 +67,7 @@ export const HorizontalCard = ({
       >
         <Typography
           variant="h6"
-          component="div"
+          component="p"
           sx={{
             overflow: "hidden",
             textOverflow: "ellipsis",

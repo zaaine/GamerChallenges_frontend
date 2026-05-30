@@ -124,7 +124,7 @@ export default function EntryCard({
             alignItems="center"
             marginBottom={0}
           >
-            <Typography variant="h6" component="div" marginBottom={1}>
+            <Typography variant="h6" component="p" marginBottom={1}>
               {pseudo || "Pseudo"}
             </Typography>
           </Box>

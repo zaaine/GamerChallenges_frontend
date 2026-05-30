@@ -3,7 +3,7 @@ import { createTheme } from "@mui/material"
 export const theme = createTheme({
   palette: {
     primary: {
-      main: "#8585FF",
+      main: "#4a4ab8",
       contrastText: "#EBEBFF",
     },
   },
@@ -16,10 +16,10 @@ export const theme = createTheme({
               borderColor: "#EBEBFF",
             },
             "&:hover fieldset": {
-              borderColor: "#8585FF",
+              borderColor: "#4a4ab8",
             },
             "&.Mui-focused fieldset": {
-              borderColor: "#8585FF",
+              borderColor: "#4a4ab8",
             },
             "& input": {
               color: "#EBEBFF",
@@ -77,6 +77,12 @@ export const theme = createTheme({
           ".MuiChip-labelMedium": {
             padding: "1rem",
           },
+        },
+        colorPrimary: {
+          color: "#fffffff",
+        },
+        filled: {
+          color: "#ffffff",
         },
       },
     },

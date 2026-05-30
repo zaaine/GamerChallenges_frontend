@@ -61,6 +61,7 @@ export const ChallengesList = ({
                 <Box>
                   <Typography
                     variant="h6"
+                    component="p"
                     sx={{
                       display: "-webkit-box",
                       WebkitLineClamp: 2, // Limite de lignes
