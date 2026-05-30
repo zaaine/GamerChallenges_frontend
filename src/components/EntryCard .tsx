@@ -94,7 +94,7 @@ export default function EntryCard({
         >
           <Avatar
             src={image || avatarDefault}
-            alt="Photo"
+            alt="Photo de profil"
             sx={{
               width: 40,
               height: 40,

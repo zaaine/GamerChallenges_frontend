@@ -58,7 +58,7 @@ export default function AccountMenu() {
             aria-expanded={isMenuOpen ? "true" : undefined}
             aria-label="menu du compte"
           >
-            <Avatar src={avatar} />
+            <Avatar src={avatar} alt="photo de profil" />
           </IconButton>
         </Tooltip>
       </Box>

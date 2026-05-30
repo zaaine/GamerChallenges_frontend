@@ -55,6 +55,7 @@ export default function Header() {
                   ".MuiAvatar-img": { width: "75%", height: "75%", p: "1px" },
                 }}
                 src={avatar}
+                alt="photo de profil"
               />
             </IconButton>
           ) : (
