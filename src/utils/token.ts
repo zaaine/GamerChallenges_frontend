@@ -6,6 +6,8 @@ export async function refreshTokenIfInvalid(): Promise<void> {
   const authStore = useAuthStore.getState()
   const token = authStore.accessToken
 
+  if (!token) return
+
   if (!token || !isAccessTokenValid(token)) {
     const newToken = await AuthService.getNewAccessToken()
     if (newToken) {

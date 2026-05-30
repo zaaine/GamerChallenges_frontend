@@ -48,6 +48,7 @@ export default function Header() {
               onClick={() => setIsAuthModalOpen(true)}
               size="small"
               sx={{ ml: 2 }}
+              aria-label="se connecter"
             >
               <Avatar
                 sx={{

@@ -19,12 +19,14 @@ class AuthService extends BaseService<User> {
     const res = await handleAxiosError(() =>
       axiosClient.post<UserResponse>(`${this.endpoint}/login`, credentials)
     )
+    localStorage.setItem("hasSession", "true")
     queryClient.invalidateQueries({ queryKey: ["challengesList"] })
     return res.data
   }
 
   async logout(): Promise<void> {
     await handleAxiosError(() => axiosClient.post(`${this.endpoint}/logout`))
+    localStorage.removeItem("hasSession")
     queryClient.invalidateQueries({ queryKey: ["challengesList"] })
   }
 
@@ -51,10 +53,14 @@ class AuthService extends BaseService<User> {
   }
 
   async getNewAccessToken(): Promise<string | null> {
-    const res = await handleAxiosError(() =>
-      axiosClient.post<{ accessToken: string }>(`${this.endpoint}/refresh`)
-    )
-    return res.data.accessToken || null
+    try {
+      const res = await axiosClient.post<{ accessToken: string }>(
+        `${this.endpoint}/refresh`
+      )
+      return res.data.accessToken || null
+    } catch {
+      return null
+    }
   }
 }
 

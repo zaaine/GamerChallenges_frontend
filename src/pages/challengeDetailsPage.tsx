@@ -105,14 +105,6 @@ export const ChallengeDetailsPage = ({
     }
   }
 
-  // const [version, setVersion] = useState(0)
-
-  // useEffect(() => {
-  //   if (!entriesAreLoading) {
-  //     setVersion((v) => v + 1)
-  //   }
-  // }, [entries])
-
   const [snackbarOpen, setSnackbarOpen] = useState(false)
   const [snackbarMessage, setSnackbarMessage] = useState("")
 

@@ -11,11 +11,10 @@ export const useFetchCurrentUser = () => {
   const { data: user, isLoading } = useQuery<User | null, Error>({
     queryKey: ["currentUser"],
     queryFn: async () => {
+      if (!localStorage.getItem("hasSession")) return null
       const accessToken = await AuthService.getNewAccessToken()
-      if (accessToken) {
-        setAccessToken(accessToken)
-      }
-
+      if (!accessToken) return null
+      setAccessToken(accessToken)
       const user = await AuthService.getCurrentUser()
       return user
     },

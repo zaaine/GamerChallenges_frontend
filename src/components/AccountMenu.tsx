@@ -56,6 +56,7 @@ export default function AccountMenu() {
             aria-controls={isMenuOpen ? "account-menu" : undefined}
             aria-haspopup="true"
             aria-expanded={isMenuOpen ? "true" : undefined}
+            aria-label="menu du compte"
           >
             <Avatar src={avatar} />
           </IconButton>
