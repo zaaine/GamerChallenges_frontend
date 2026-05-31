@@ -92,18 +92,22 @@ export default function EntryCard({
           justifyContent="space-between"
           margin="16px 16px 0 10px"
         >
-          <Avatar
-            src={image || avatarDefault}
-            alt="Photo de profil"
-            sx={{
-              width: 40,
-              height: 40,
-              bgcolor: "var(--tropical-indigo)",
-              objectFit: "cover",
-              objectPosition: "center",
-            }}
-          />
-
+          <Box display="flex" gap={1} alignItems="center">
+            <Avatar
+              src={image || avatarDefault}
+              alt="Photo de profil"
+              sx={{
+                width: 40,
+                height: 40,
+                bgcolor: "var(--tropical-indigo)",
+                objectFit: "cover",
+                objectPosition: "center",
+              }}
+            />
+            <Typography variant="h6" component="p" marginBottom={1}>
+              {pseudo || "Pseudo"}
+            </Typography>
+          </Box>
           {isLoggedIn && isOwner && (
             <Box>
               <IconButton
@@ -123,11 +127,7 @@ export default function EntryCard({
             justifyContent="space-between"
             alignItems="center"
             marginBottom={0}
-          >
-            <Typography variant="h6" component="p" marginBottom={1}>
-              {pseudo || "Pseudo"}
-            </Typography>
-          </Box>
+          ></Box>
           <Typography
             variant="body2"
             marginBottom={2}
