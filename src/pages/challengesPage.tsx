@@ -1,5 +1,5 @@
 import { Box, Chip, CircularProgress, Typography } from "@mui/material"
-import { useQuery } from "@tanstack/react-query"
+import { useQuery, useQueryClient } from "@tanstack/react-query"
 import { useEffect, useState } from "react"
 import ChallengeModal from "../components/ChallengeModal"
 import { ChallengesList } from "../components/ChallengesList"
@@ -33,7 +33,10 @@ export const ChallengesPage = () => {
     refetchOnWindowFocus: false, // Évite refetch intempestifs
     refetchOnMount: false, // Utilise cache si frais
   })
-
+  const queryClient = useQueryClient()
+  const handleChallengeCreated = () => {
+    queryClient.invalidateQueries({ queryKey: ["challengesList"] })
+  }
   const challengeList = response?.challenges ?? []
   const challengeMemberList = response?.memberChallenges ?? []
   const totalPages = response?.nbPages
@@ -87,6 +90,7 @@ export const ChallengesPage = () => {
             <ChallengeModal
               open={isCreateChallengeModalOpen}
               setOpen={setIsCreateChallengeModalOpen}
+              onSuccess={handleChallengeCreated}
             />
           </Box>
         )}

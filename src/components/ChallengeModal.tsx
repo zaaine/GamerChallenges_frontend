@@ -10,9 +10,11 @@ import { ChallengeForm } from "./forms/ChallengeForm"
 export default function ChallengeModal({
   open,
   setOpen,
+  onSuccess,
 }: {
   open: boolean
   setOpen: React.Dispatch<React.SetStateAction<boolean>>
+  onSuccess?: () => void
 }) {
   const [snackbarOpen, setSnackbarOpen] = useState(false)
   const challengeForm = useForm<ChallengeInfos>()
@@ -27,6 +29,7 @@ export default function ChallengeModal({
     const response = await ChallengeService.create(data)
     if (!response) throw new Error("Erreur lors de l'envoi")
     setSnackbarOpen(true)
+    onSuccess?.()
     handleClose()
   }
   return (
